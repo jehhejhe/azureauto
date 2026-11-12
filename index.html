@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a0f">
+  <title>AZURE AUTO | Personnalisation automobile</title>
+  <meta name="description" content="AZURE AUTO : installation CarPlay et ciel étoilé automobile à Toulouse et ses alentours.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #080a0f; color: white; font-family: Montserrat, sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    header { position: sticky; top: 0; z-index: 10; background: #080a0fee; border-bottom: 1px solid #ffffff18; }
+    nav { max-width: 1180px; margin: auto; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .logo { font-size: 23px; font-weight: 800; letter-spacing: 3px; }
+    .logo span { color: #1677ff; }
+    .links { display: flex; gap: 25px; font-size: 12px; font-weight: 600; }
+    .links a:hover { color: #398aff; }
+    .hero { min-height: 650px; display: flex; align-items: center; background: linear-gradient(90deg,#080a0fee 0%,#080a0fbb 48%,#080a0f30 100%), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2000&q=85') center/cover; }
+    .hero-content { max-width: 1180px; width: 100%; margin: auto; padding: 90px 24px; }
+    .tag { color: #65a5ff; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+    h1 { font-size: clamp(42px,7vw,76px); line-height: 1.08; margin: 22px 0; max-width: 750px; }
+    h1 span { color: #398aff; }
+    .hero p { color: #c4c9d3; line-height: 1.8; max-width: 560px; font-size: 15px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .btn { display: inline-block; padding: 15px 23px; border-radius: 5px; font-size: 12px; font-weight: 700; transition: .2s; }
+    .primary { background: #1677ff; }
+    .primary:hover { background: #398aff; transform: translateY(-2px); }
+    .secondary { border: 1px solid #ffffff70; }
+    .secondary:hover { border-color: #398aff; color: #65a5ff; }
+    section { padding: 90px 24px; }
+    .container { max-width: 1180px; margin: auto; }
+    .section-tag { color: #398aff; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+    h2 { font-size: clamp(28px,4vw,42px); margin: 14px 0; }
+    .intro { color: #aeb5c2; max-width: 650px; line-height: 1.8; font-size: 14px; }
+    .services { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; margin-top: 38px; }
+    .service { min-height: 390px; display: flex; flex-direction: column; justify-content: end; padding: 30px; border: 1px solid #ffffff20; border-radius: 9px; overflow: hidden; background-size: cover; background-position: center; position: relative; }
+    .service:before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg,#080a0f 0%,#080a0fbb 35%,transparent 100%); }
+    .service > * { position: relative; }
+    .service h3 { font-size: 25px; margin-bottom: 12px; }
+    .service p { color: #d0d5df; font-size: 13px; line-height: 1.7; max-width: 420px; margin-bottom: 20px; }
+    .carplay { background-image: url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1100&q=85'); }
+    .stars { background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=85'); }
+    .steps { background: #0e1420; }
+    .step-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 35px; }
+    .step { padding: 25px; border: 1px solid #ffffff18; border-radius: 7px; background: #111927; }
+    .number { color: #398aff; font-size: 27px; font-weight: 800; }
+    .step h3 { margin: 15px 0 9px; font-size: 16px; }
+    .step p { color: #aeb5c2; font-size: 13px; line-height: 1.7; }
+    .contact { text-align: center; background: linear-gradient(120deg,#0c1930,#080a0f); }
+    .contact .intro { margin: auto; }
+    footer { padding: 30px 24px; border-top: 1px solid #ffffff18; color: #8993a3; font-size: 11px; }
+    .footer-inner { max-width: 1180px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+    .legal { display: flex; gap: 18px; flex-wrap: wrap; }
+    @media(max-width:700px) {
+      nav { align-items: flex-start; flex-direction: column; }
+      .links { gap: 15px; flex-wrap: wrap; }
+      .hero { min-height: 570px; }
+      .services,.step-grid { grid-template-columns: 1fr; }
+      section { padding: 65px 20px; }
+      .service { min-height: 340px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="#">AZURE <span>AUTO</span></a>
+      <div class="links">
+        <a href="#accueil">Accueil</a>
+        <a href="#carplay">Installation CarPlay</a>
+        <a href="#etoile">Ciel étoilé</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-content">
+        <div class="tag">Personnalisation automobile · Toulouse</div>
+        <h1>Votre voiture.<br>Votre <span>univers.</span></h1>
+        <p>Donnez une nouvelle dimension à votre véhicule avec nos installations CarPlay et nos ciels étoilés. Un intérieur modernisé, une expérience unique.</p>
+        <div class="actions">
+          <a class="btn primary" href="#carplay">Découvrir CarPlay</a>
+          <a class="btn secondary" href="#etoile">Découvrir le ciel étoilé</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-tag">Nos prestations</div>
+        <h2>Transformez votre intérieur</h2>
+        <p class="intro">AZURE AUTO vous accompagne dans la personnalisation de votre véhicule avec des installations pensées pour allier technologie, confort et esthétique.</p>
+        <div class="services">
+          <article class="service carplay" id="carplay">
+            <div class="section-tag">Technologie & confort</div>
+            <h3>Installation CarPlay</h3>
+            <p>Profitez de vos applications, de votre musique et de votre navigation directement dans votre voiture grâce à une installation adaptée à votre véhicule.</p>
+            <a class="btn primary" href="#contact">Découvrir le service</a>
+          </article>
+          <article class="service stars" id="etoile">
+            <div class="section-tag">Ambiance & élégance</div>
+            <h3>Installation ciel étoilé</h3>
+            <p>Apportez une ambiance lumineuse unique à votre habitacle avec un ciel étoilé personnalisé.</p>
+            <a class="btn primary" href="#contact">Découvrir le service</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="container">
+        <div class="section-tag">Comment ça marche ?</div>
+        <h2>Un parcours simple</h2>
+        <p class="intro">De votre demande jusqu'à l'installation, nous vous accompagnons à chaque étape.</p>
+        <div class="step-grid">
+          <article class="step"><div class="number">01</div><h3>Choisissez votre prestation</h3><p>Découvrez nos solutions et renseignez les informations de votre véhicule.</p></article>
+          <article class="step"><div class="number">02</div><h3>Préparez votre matériel</h3><p>Vérifiez la compatibilité et commandez votre équipement avant le rendez-vous.</p></article>
+          <article class="step"><div class="number">03</div><h3>Réservez votre installation</h3><p>Une fois votre matériel reçu, choisissez un créneau disponible.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-tag">Parlons de votre projet</div>
+        <h2>Prêt à transformer votre véhicule ?</h2>
+        <p class="intro">Contactez AZURE AUTO pour toute question sur nos installations ou votre véhicule.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="btn primary" href="mailto:contact@azureauto.fr">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>© 2026 AZURE AUTO — Tous droits réservés.</div>
+      <div class="legal">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
